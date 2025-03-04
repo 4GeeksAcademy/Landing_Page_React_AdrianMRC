@@ -5,6 +5,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
   }
+  html {
+    position: relative;
+    min-height: 100%;
+  }
   
   /* Personalización de la barra de navegación */
   .navbar {

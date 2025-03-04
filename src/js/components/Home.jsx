@@ -4,6 +4,7 @@ import CustomNavbar from './Navbar';
 import Jumbotron from './Jumbotron';
 import CustomCard from './Card';
 import Footer from './Footer';
+//import {characters} from './src/mock'
 
 const Home = () => {
 	const cardsData = [
@@ -38,9 +39,9 @@ const Home = () => {
 		  <CustomNavbar />
 		  <Container className="mt-4">
 			<Jumbotron />
-			<Row>
+			<Row xs={1} sm={2} md={3} lg={4} className="g-4">
 			  {cardsData.map((card, index) => (
-				<Col key={index} className="mb-4" md={3}> 
+				<Col key={index}> 
 				  <CustomCard
 					title={card.title}
 					text={card.text}
