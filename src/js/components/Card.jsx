@@ -1,28 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CustomCard = ({ title, text, image, buttonUrl }) => (
-  <div className="card h-100 shadow-sm">
-    <img 
-      src={image} 
-      className="card-img-top img-fluid" 
-      alt={title}
-      style={{ height: "200px", objectFit: "cover" }}
-    />
-    <div className="card-body d-flex flex-column">
-      <h5 className="card-title">{title}</h5>
-      <p className="card-text flex-grow-1">{text}</p>
-      <a href={buttonUrl} className="btn btn-primary mt-auto align-self-start">
-        ¿Más Info?
-      </a>
+const CustomCard = ({ name, image, status, species, location, buttonUrl }) => {
+  const statusColor = {
+    Alive: 'bg-success',
+    Dead: 'bg-danger',
+    unknown: 'bg-secondary'
+  };
+
+  return (
+    <div className="card h-100 shadow-sm">
+      <img 
+        src={image} 
+        className="card-img-top img-fluid" 
+        alt={name}
+        style={{ height: "300px", objectFit: "cover" }}
+      />
+      <div className="card-body">
+        <h5 className="card-title">{name}</h5>
+        <div className="d-flex align-items-center mb-2">
+          <span className={`badge ${statusColor[status]} me-2`}>&nbsp;</span>
+          <span>{status} - {species}</span>
+        </div>
+        <p className="card-text text-muted small">
+          {location}
+        </p>
+        <a href={buttonUrl} className="btn btn-primary mt-auto align-self-start">
+        API del personaje
+        </a>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 CustomCard.propTypes = {
-  title: PropTypes.string,
-  text: PropTypes.string,
+  name: PropTypes.string,
   image: PropTypes.string,
+  status: PropTypes.string,
+  species: PropTypes.string,
+  location: PropTypes.string,
   buttonUrl: PropTypes.string
 };
 

@@ -1,91 +1,46 @@
-/* src/styles/index.css */
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 
-/* Estilos globales */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-  }
-  html {
-    position: relative;
-    min-height: 100%;
-  }
-  
-  /* Personalización de la barra de navegación */
-  .navbar {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .navbar-brand {
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-  
-  .nav-link {
-    margin-left: 1.5rem !important;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: #17a2b8 !important;
-  }
-  
-  /* Sección Hero */
-  .hero-section {
-    background-color: #f8f9fa;
-    border-radius: 0.3rem;
-  }
-  
-  .display-4 {
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-  }
-  
-  .lead {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-  
-  /* Tarjetas */
-  .card {
-    border: none;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card-img-top {
-    border-top-left-radius: calc(0.3rem - 1px);
-    border-top-right-radius: calc(0.3rem - 1px);
-  }
-  
-  .card-body {
-    padding: 1.5rem;
-  }
-  
-  /* Botones */
-  .btn-primary {
-    padding: 0.75rem 1.5rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .display-4 {
-      font-size: 2.5rem;
-    }
-    
-    .card {
-      margin-bottom: 1.5rem;
-    }
-    
-    .nav-link {
-      margin-left: 0 !important;
-      padding: 0.5rem 1rem;
-    }
-  }
+.nav-link {
+  margin-left: 1.5rem;
+}
+
+.nav-link:hover {
+  color: #17a2b8;
+}
+
+.display-4 {
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+

@@ -1,60 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import CustomNavbar from './Navbar';
 import Jumbotron from './Jumbotron';
 import CustomCard from './Card';
 import Footer from './Footer';
-//import {characters} from './src/mock'
+import {getCharacters} from '../../mock/characters';
 
 const Home = () => {
-	const cardsData = [
-		{
-			title: "Card title",
-			text: "Some quick example text to build on the card title...",
-			image: "https://via.placeholder.com/500x325",
-			buttonUrl: "#"
-		},
-		{
-			title: "Card title",
-			text: "Some quick example text to build on the card title...",
-			image: "https://via.placeholder.com/500x325",
-			buttonUrl: "#"
-		},
-		{
-			title: "Card title",
-			text: "Some quick example text to build on the card title...",
-			image: "https://via.placeholder.com/500x325",
-			buttonUrl: "#"
-		},
-		{
-			title: "Card title",
-			text: "Some quick example text to build on the card title...",
-			image: "https://via.placeholder.com/500x325",
-			buttonUrl: "#"
-		},
-	];
-
+	const [characters] = useState(getCharacters.slice(0, 4));
+  
 	return (
-		<>
-		  <CustomNavbar />
-		  <Container className="mt-4">
-			<Jumbotron />
+	  <>
+		<CustomNavbar />
+		<Container className="mt-4">
+		  <Jumbotron />
 			<Row xs={1} sm={2} md={3} lg={4} className="g-4">
-			  {cardsData.map((card, index) => (
-				<Col key={index}> 
+			  {characters.map((character) => (
+				<Col key={character.id}>
 				  <CustomCard
-					title={card.title}
-					text={card.text}
-					image={card.image}
-					buttonUrl={card.buttonUrl}
+					name={character.name}
+					image={character.image}
+					status={character.status}
+					species={character.species}
+					location={character.location.name}
+					buttonUrl={character.url}
+					
 				  />
 				</Col>
 			  ))}
 			</Row>
-		  </Container>
-		  <Footer />
-		</>
-	  );
-	};
-
-export default Home;
+		</Container>
+		<Footer />
+	  </>
+	);
+  };
+  
+  export default Home;
